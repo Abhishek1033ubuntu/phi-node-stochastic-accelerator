@@ -25,3 +25,14 @@ The Φ-Node Paradigm is an architecture designed to bypass the traditional "Ther
 * **Phase 2 (Complete):** Translation of validated behavioral rules into individual, synthesizable Verilog RTL functional modules.
 * **Phase 3 (Complete & Verified):** Macro-scale parallel coprocessor array integration, structural wire-harness testing, and multi-channel verification via terminal simulations.
 * **Phase 4 (Next R&D Milestone):** FPGA Deployment, synthesis optimization, and physical hardware emulation.
+
+How to Run Simulations Local/Colab
+If you are using an open-source toolchain like Icarus Verilog (`iverilog`) and `vvp`, you can compile and execute the structural hardware verification loops using the following terminal commands:
+1. Compile & Run Single Core Loop
+```bash
+iverilog -o unified_core_bin tb_phi_node_core.v phi_node_core.v b2s_converter.v phase_cross_correlator.v s2b_converter.v
+vvp unified_core_bin
+
+Compile & Run Macro-Array Matrix Parallel Loop
+iverilog -o phi_array_system_bin tb_phi_array_top.v phi_array_top.v phi_seed_matrix.v phi_node_core.v b2s_converter.v phase_cross_correlator.v s2b_converter.v
+vvp phi_array_system_bin
