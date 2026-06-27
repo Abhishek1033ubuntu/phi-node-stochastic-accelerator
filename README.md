@@ -26,13 +26,27 @@ The Φ-Node Paradigm is an architecture designed to bypass the traditional "Ther
 * **Phase 3 (Complete & Verified):** Macro-scale parallel coprocessor array integration, structural wire-harness testing, and multi-channel verification via terminal simulations.
 * **Phase 4 (Next R&D Milestone):** FPGA Deployment, synthesis optimization, and physical hardware emulation.
 
-How to Run Simulations Local/Colab
-If you are using an open-source toolchain like Icarus Verilog (`iverilog`) and `vvp`, you can compile and execute the structural hardware verification loops using the following terminal commands:
-1. Compile & Run Single Core Loop
+## Simulation & Hardware Verification Requirements
+
+To execute the hardware testing loops and verify the structural RTL logic modules of the Φ-Node Co-Processor, your local environment or virtual container must satisfy the following dependencies:
+
+### 1. Toolchain Requirements
+* **Compiler:** Icarus Verilog (`iverilog`) v10.3 or higher (or any IEEE-1364 standard synthesizable Verilog simulator).
+* **Runtime Engine:** `vvp` (Icarus Verilog vvp runtime engine).
+* **Waveform Viewer (Optional):** GTKWave (required if generating and analyzing `.vcd` timing diagrams).
+
+### 2. Execution Commands (Terminal / Google Colab)
+
+Navigate to your `Hardware_RTL/` directory and execute the respective shell commands to compile and run the unified testbenches:
+
+#### A. Single Core Pipeline Verification
+Compiles the generator, active cross-correlator phase-correction layer, and elastic precision accumulator into a unified structural loop:
 ```bash
 iverilog -o unified_core_bin tb_phi_node_core.v phi_node_core.v b2s_converter.v phase_cross_correlator.v s2b_converter.v
 vvp unified_core_bin
+B. Macro-Scale Parallel Coprocessor Array Verification
+Compiles the master seed-distribution network alongside multiple synchronized parallel execution channels to verify high-entropy matrix operations:
 
-Compile & Run Macro-Array Matrix Parallel Loop
+Bash
 iverilog -o phi_array_system_bin tb_phi_array_top.v phi_array_top.v phi_seed_matrix.v phi_node_core.v b2s_converter.v phase_cross_correlator.v s2b_converter.v
 vvp phi_array_system_bin
