@@ -9,9 +9,19 @@ The Φ-Node Paradigm is an architecture designed to bypass the traditional "Ther
 - **Many-Body Localization (MBL) Thermal Shielding:** Disordered superlattice boundary simulation verifying absolute GaN core stabilization (~24.5°C) under high-wattage (150 W/cm²) workloads.
 
 ## Project Structure
-- `phi_node_engine.py`: Unified Python execution engine modeling logic gates, FeFET phase-flips, and physical thermal behaviors.
-- `docs/`: Technical white papers and conceptual architectural schematics.
+
+* `Simulations/phi_node_engine.py`: Unified Python execution engine modeling logic gates, FeFET phase-flips, and physical thermal behaviors.
+* `Hardware_RTL/`: Synthesizable Verilog HDL modules executing the structural computing pipeline.
+  * `b2s_converter.v`: Binary-to-Stochastic pulse-density generation using orthogonal LFSR seeding.
+  * `phase_cross_correlator.v`: Real-time hardware XNOR stream-collision detection and active 180° phase-flip intervention logic.
+  * `s2b_converter.v`: Elastic precision integrator accumulating passing pulse densities to resolve binary outputs.
+  * `phi_seed_matrix.v`: Entropy broadcast matrix ensuring inter-core seed independence.
+  * `phi_array_top.v`: Overarching multi-core routing network executing parallel coprocessing.
+* `docs/`: Technical white papers, project reports, and conceptual architectural schematics.
 
 ## Roadmap
-- **Phase 1 (Complete):** Mathematical proof of concept & physical boundary modeling via Python.
-- **Phase 2 (Current):** Translation of validated logic into synthesizable Verilog/SystemVerilog RTL modules.
+
+* **Phase 1 (Complete):** Mathematical proof of concept & physical boundary modeling via Python behavioral simulation.
+* **Phase 2 (Complete):** Translation of validated behavioral rules into individual, synthesizable Verilog RTL functional modules.
+* **Phase 3 (Complete & Verified):** Macro-scale parallel coprocessor array integration, structural wire-harness testing, and multi-channel verification via terminal simulations.
+* **Phase 4 (Next R&D Milestone):** FPGA Deployment, synthesis optimization, and physical hardware emulation.
