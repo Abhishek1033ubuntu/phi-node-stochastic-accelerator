@@ -50,3 +50,20 @@ Compiles the master seed-distribution network alongside multiple synchronized pa
 Bash
 iverilog -o phi_array_system_bin tb_phi_array_top.v phi_array_top.v phi_seed_matrix.v phi_node_core.v b2s_converter.v phase_cross_correlator.v s2b_converter.v
 vvp phi_array_system_bin
+
+# Important Notice
+
+This repository contains code published for demonstration and testing purposes only. 
+The underlying intellectual property (IP) — including inventions, processes, methods, 
+algorithms, and research results — is proprietary and protected under Indian law and 
+international treaties (Berne Convention, Paris Convention, TRIPS Agreement).
+
+By accessing this repository, you agree:
+- The code may be viewed and studied for non-commercial, educational, or research use only.
+- Any reproduction, modification, distribution, or commercialization of the IP is strictly prohibited.
+- Enforcement of rights will be pursued under Indian jurisdiction and applicable international treaties.
+
+For licensing inquiries or commercial permissions, please contact:
+Abhishek Singh  | UIDAI: 9414 9122 9013
+Email: abhishek1033@gmail.com | abhishek.s@live.in
+Location: Madhya Pradesh, India
