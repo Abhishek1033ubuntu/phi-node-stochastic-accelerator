@@ -4,9 +4,9 @@ Copyright (c) 2026 Abhishek Singh | UIDAI: 9414 9122 9013
 Location: Madhya Pradesh, India
 Contact: abhishek1033@gmail.com | abhishek.s@live.in
 
-================================================================================
+---
 INTELLECTUAL PROPERTY & PROPRIETARY RIGHTS NOTICE
-================================================================================
+---
 
 This repository contains code, simulation models, finite element analysis scripts, 
 G-code manufacturing paths, and proprietary intellectual property (IP) associated with 
